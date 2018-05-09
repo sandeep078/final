@@ -1,5 +1,5 @@
 variable "aws_access_key" {
-  default = "AKIAJASWYU64J76FMVPA "
+  default = "AKIAJASWYU64J76FMVPA"
 }
 
 variable "aws_secret_key" {

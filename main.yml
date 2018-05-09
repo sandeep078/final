@@ -5,7 +5,7 @@
   connection: ssh
   tasks:
   - name: ensure python-software-properties is installed
-    yum: pkg=python-software-properties state=installed
+    apt: pkg=python-software-properties state=installed
 
   - name: add rabbitmq official apt repository
     apt_repository: repo='deb http://www.rabbitmq.com/debian/ testing main' state=present
@@ -14,7 +14,7 @@
     apt_key: url=https://www.rabbitmq.com/rabbitmq-signing-key-public.asc state=present
 
   - name: install package
-    yum: name={{ item }} update_cache=yes state=installed
+    apt: name={{ item }} update_cache=yes state=installed
     allow_unauthenticated: yes
     force: yes
     with_items:

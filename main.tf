@@ -366,7 +366,7 @@ resource "aws_autoscaling_group" "wp_asg" {
 
   tags {
     key                 = "Name"
-    value               = "wp_asg-instance"
+    value               = "prod"
     propagate_at_launch = true
   }
 }

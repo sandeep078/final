@@ -1,9 +1,9 @@
 variable "aws_access_key" {
-  default = "AKIAJWF6XXCRRJKBQYZQ "
+  default = "AKIAJASWYU64J76FMVPA "
 }
 
 variable "aws_secret_key" {
- default = "0/VHTeFp63uosSdooCookgzxhuxKqYmbdL85MSiX"
+ default = "U8MpAYj1j/eWm0MWRt5Oak5/6FgvwrSFcU9bhqCA"
 }
 
 variable "AWS_REGION" {

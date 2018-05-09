@@ -5,7 +5,7 @@ pipeline {
         }
     }
 environment {
-        TERRAFORM_CMD = '/bin/terraform'
+        TERRAFORM_CMD = 'terraform'
     }
     stages {
         stage('checkout repo') {

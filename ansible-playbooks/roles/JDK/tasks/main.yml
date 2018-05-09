@@ -1,0 +1,34 @@
+---
+
+- name: Install Wget 
+  yum: name=wget state=present 
+
+- name: Download JAVA JDK 8 
+  get_url: 
+    url: http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.tar.gz
+    dest: /opt/jdk-8u171-linux-x64.tar.gz
+    headers: 'Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'
+
+- name: JDK 8 Extract archive
+  command: chdir=/usr/share /bin/tar xvf /opt/jdk-8u171-linux-x64.tar.gz -C /opt/ creates=/opt/jdk1.8.0_171
+
+- name: JDK 8 Symlink install directory
+  file: src=/opt/jdk1.8.0_171 path=/opt/java state=link
+
+- name: JDK 8 correct java version selected
+  alternatives:
+    name: java
+    link: /usr/bin/java
+    path: /opt/java/bin/java
+
+- name: JDK 8 correct jar version selected
+  alternatives:
+    name: jar
+    link: /usr/bin/jar
+    path: /opt/java/bin/jar
+
+- name: JDK 8 correct javac version selected
+  alternatives:
+    name: javac
+    link: /usr/bin/javac
+    path: /opt/java/bin/javac

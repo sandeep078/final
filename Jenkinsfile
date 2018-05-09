@@ -21,7 +21,7 @@ environment {
             }
         }
         stage('plan') {
-            steps {{
+            steps {
                 sh  """
                     ${TERRAFORM_CMD} plan -out=tfplan -input=false 
                     """
